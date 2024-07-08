@@ -42,7 +42,7 @@ public class BtnUI : PopupUI
         Bind<GameObject>(typeof(GameObjs));
         Bind<Image>(typeof(Imgs));
 
-        GetButton((int)Btns.PointBtn).gameObject.BindEvent(OnButtonClicked);
+        //GetButton((int)Btns.PointBtn).gameObject.Bind(OnButtonClicked);
 
         GameObject obj = GetImage((int)Imgs.ItemIcon).gameObject;
         BindEvent(obj, (PointerEventData data) => { obj.transform.position = data.position; }, DefineUI.UIEvent.Drag);

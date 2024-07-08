@@ -14,7 +14,7 @@ public class Managers : MonoBehaviour
         }
     }
 
-    UIManager uIManager = new UIManagers();
+    UIManager uIManager = new UIManager();
     public static UIManager UI { get { return Instance.uIManager; } }
 
     private void Start()

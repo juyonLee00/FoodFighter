@@ -48,9 +48,10 @@ public class UIManager : MonoBehaviour
         if (string.IsNullOrEmpty(name))
             name = typeof(T).Name;
 
-        GameObject obj = Managers.Resource.Instantiate($"UI/Popup/(name)");
+        //GameObject obj = Managers.Resource.Instantiate($"UI/Popup/(name)");
+        GameObject obj = new GameObject();
         T popup = UtilUI.GetOrAddComponent <T> (obj);
-
+        
         obj.transform.SetParent(Root.transform);
 
         return popup;
@@ -61,7 +62,7 @@ public class UIManager : MonoBehaviour
         if (_popupStack.Count == 0)
             return;
 
-        //스택의 가장 위의 부
+        //스택의 가장 위의 부분 
         if (_popupStack.Peek() != popup)
         {
             //Debug.Log("Close Popup Failed");
@@ -78,7 +79,7 @@ public class UIManager : MonoBehaviour
             return;
 
         PopupUI popupUI = _popupStack.Pop();
-        Managers.Resource.Destroy(popupUI.gameObject);
+        //Managers.Resource.Destroy(popupUI.gameObject);
         popupUI = null;
         _order -= 1;
 
